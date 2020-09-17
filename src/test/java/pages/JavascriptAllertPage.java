@@ -8,14 +8,14 @@ import net.thucydides.core.annotations.DefaultUrl;
 @DefaultUrl("/javascript_alerts")
 public class JavascriptAllertPage  extends PageObject{
 
-	
-	@FindBy(xpath = "//div[@id='content']//ul//button[.='Click for JS Alert']")
+	                  //*[@id="content"]/div/ul/li[1]/button
+	@FindBy(xpath = "//*[@id=\"content\"]/div/ul/li[1]/button")
 	private WebElementFacade regularAlert;
 	
-	@FindBy(xpath = "//div[@id='content']//ul//button[.='Click for JS Confirm']")
+	@FindBy(xpath = "//*[@id=\"content\"]/div/ul/li[2]/button")
 	private WebElementFacade confirmAlert;
 	
-	@FindBy(xpath = "//div[@id='content']//ul//button[.='Click for JS Prompt']")
+	@FindBy(xpath = "//*[@id=\"content\"]/div/ul/li[3]/button")
 	private WebElementFacade promptAlert;
 	
 	public void workingWithalert() {
@@ -24,6 +24,14 @@ public class JavascriptAllertPage  extends PageObject{
 		confirmAlert.click();
 		
 		System.out.println(getAlert().getText());
+		
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		getAlert().accept();
 		
@@ -35,11 +43,18 @@ public class JavascriptAllertPage  extends PageObject{
 	public void workingWithConfirmAlert() {
 		open();
 		
-		regularAlert.click();
+		confirmAlert.click();
 		
 		System.out.println(getAlert().getText());
 		
 //		getAlert().accept();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 		getAlert().dismiss();
 		
@@ -51,7 +66,7 @@ public class JavascriptAllertPage  extends PageObject{
 	public void workingWithpromptAlert() {
 		open();
 		
-		regularAlert.click();
+		promptAlert.click();
 		
 		System.out.println(getAlert().getText());
 		
@@ -61,6 +76,14 @@ public class JavascriptAllertPage  extends PageObject{
 		
 		getAlert().sendKeys("techcircle");
 		System.out.println(getAlert().getText());
+		
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		getAlert().accept();
 
 		

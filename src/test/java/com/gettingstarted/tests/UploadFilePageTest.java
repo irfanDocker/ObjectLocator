@@ -19,6 +19,8 @@ public class UploadFilePageTest {
 	@Test
 	public void uploadTest() {
 		page.uploadFile();
+		
+//		System.out.println(System.getProperty("user.dir"));
 	}
 	
 	

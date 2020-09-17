@@ -26,10 +26,18 @@ public class MouseActionPage extends PageObject {
 		
 		open();
 		
-		withAction().moveToElement(image1).build().perform();
-	
+		withAction().moveToElement(image2).build().perform();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		waitForTextToAppear("name: user1").$("/html//div[@id='content']//a[@href='/users/1']").click();
+		//waitForTextToAppear("name: user1").$("/html//div[@id='content']//a[@href='/users/1']").click();
+		waitForTextToAppear("name: user2").$("//*[@id=\"content\"]/div/div[2]/div/a").click();
+		
+		
 		
 //		userLink1.click();
 	}

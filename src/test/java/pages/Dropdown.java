@@ -11,12 +11,11 @@ public class Dropdown extends PageObject {
 	@FindBy(id = "dropdown")
 	private WebElementFacade dropdown;
 	
-	public void selectValue() {
+	public void selectValue(String option) {
 		
 		open();
 		
-		
-		selectFromDropdown(dropdown, "Option 2");
+		selectFromDropdown(dropdown, option);
 		
 		System.out.println(getSelectedLabelFrom(dropdown));
 		

@@ -11,6 +11,7 @@ import pages.Dropdown;
 @RunWith(SerenityRunner.class)
 public class DropdownTest {
 	
+	
 	@Managed
 	WebDriver driver;
 	
@@ -18,7 +19,8 @@ public class DropdownTest {
 	
 	@Test
 	public void testingDropdownObject() {
-		page.selectValue();
+		page.selectValue("Option 1");
+		
 	}
 	
 	

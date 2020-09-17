@@ -13,6 +13,7 @@ public class CheckboxTest {
 	@Managed
 	WebDriver driver;
 	
+	
 	CheckBoxPage page;
 	
 	@Test
