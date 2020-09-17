@@ -11,8 +11,8 @@ import pages.MouseActionPage;
 @RunWith(SerenityRunner.class)
 public class MouseActionPageTest{
 
-	@Managed
-	WebDriver driver;
+//	@Managed
+//	WebDriver driver;
 
 	MouseActionPage page;
 
